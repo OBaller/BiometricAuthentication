@@ -16,6 +16,7 @@
 		B46CA2842768AB1700842CC0 /* BioAuthTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46CA2832768AB1700842CC0 /* BioAuthTests.swift */; };
 		B46CA28E2768AB1700842CC0 /* BioAuthUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46CA28D2768AB1700842CC0 /* BioAuthUITests.swift */; };
 		B46CA2902768AB1700842CC0 /* BioAuthUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46CA28F2768AB1700842CC0 /* BioAuthUITestsLaunchTests.swift */; };
+		B46CA29E2768AE2200842CC0 /* LocalAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B46CA29D2768AE2200842CC0 /* LocalAuthentication.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		B46CA2892768AB1700842CC0 /* BioAuthUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BioAuthUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B46CA28D2768AB1700842CC0 /* BioAuthUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BioAuthUITests.swift; sourceTree = "<group>"; };
 		B46CA28F2768AB1700842CC0 /* BioAuthUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BioAuthUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		B46CA29D2768AE2200842CC0 /* LocalAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LocalAuthentication.framework; path = System/Library/Frameworks/LocalAuthentication.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B46CA29E2768AE2200842CC0 /* LocalAuthentication.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +86,7 @@
 				B46CA2822768AB1700842CC0 /* BioAuthTests */,
 				B46CA28C2768AB1700842CC0 /* BioAuthUITests */,
 				B46CA26A2768AB0200842CC0 /* Products */,
+				B46CA29C2768AE2000842CC0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -125,6 +129,14 @@
 				B46CA28F2768AB1700842CC0 /* BioAuthUITestsLaunchTests.swift */,
 			);
 			path = BioAuthUITests;
+			sourceTree = "<group>";
+		};
+		B46CA29C2768AE2000842CC0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B46CA29D2768AE2200842CC0 /* LocalAuthentication.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -442,6 +454,7 @@
 				DEVELOPMENT_TEAM = ZPS3H473KB;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BioAuth/Info.plist;
+				INFOPLIST_KEY_NSFaceIDUsageDescription = "We need to authenticate user with FaceID";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -470,6 +483,7 @@
 				DEVELOPMENT_TEAM = ZPS3H473KB;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BioAuth/Info.plist;
+				INFOPLIST_KEY_NSFaceIDUsageDescription = "We need to authenticate user with FaceID";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
