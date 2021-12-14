@@ -6,12 +6,19 @@
 //
 
 import UIKit
+import LocalAuthentication
 
 class ViewController: UIViewController {
+    
+    var context = LAContext()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+
+        context.localizedCancelTitle = "End Session"
+        context.localizedFallbackTitle = " Use passcode (2)"
+        context.localizedReason = " The app needs your authentication."
+        
     }
 
 
