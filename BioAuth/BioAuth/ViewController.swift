@@ -24,6 +24,17 @@ class ViewController: UIViewController {
     func evaluatePolicy() {
         var errorCanEval: NSError?
         if context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &errorCanEval) {
+            switch context.biometryType {
+                case .faceID:
+                    print("face id")
+                case .none:
+                    print("none")
+                case .touchID:
+                    print("touch id")
+                @unknown default:
+                    print("unknown")
+            }
+            
             context.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: "Fallback title - override reasoon") { (success, error) in
                 print(success)
                 if let err = error {
