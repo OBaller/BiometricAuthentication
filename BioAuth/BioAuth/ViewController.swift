@@ -17,7 +17,7 @@ class ViewController: UIViewController {
 
         context.localizedCancelTitle = "End Session"
         context.localizedFallbackTitle = " Use passcode (2)"
-        context.localizedReason = " The app needs your authentication."
+        context.localizedReason = "The app needs your authentication."
         context.touchIDAuthenticationAllowableReuseDuration = LATouchIDAuthenticationMaximumAllowableReuseDuration
         evaluatePolicy()
     }
@@ -43,16 +43,21 @@ class ViewController: UIViewController {
                     switch evalErrCode.code {
                         case LAError.Code.userCancel:
                             print("user cancelled")
+                        case LAError.Code.appCancel:
+                            print("app cancelled")
                         case LAError.Code.userFallback:
                             print("fallback")
+                            self.promptForCode()
                         case LAError.Code.authenticationFailed:
                             print("failed")
                         default:
                             print("other error")
                     }
                 }
-                    
             }
+//            Timer.scheduledTimer(withTimeInterval: 5.0, repeats: false) { (t) in
+//                self.context.invalidate()
+//            }
         }
         else {
             print("Can't evaluate")
@@ -67,6 +72,19 @@ class ViewController: UIViewController {
                 }
             }
         }
+    }
+    
+    func promptForCode() {
+        let ac = UIAlertController(title: "Enter Code", message: "Enter your user code", preferredStyle: .alert)
+        ac.addTextField { (tf) in
+            tf.placeholder = "Enter User Code"
+            tf.keyboardType = .numberPad
+            tf.isSecureTextEntry = true
+        }
+        ac.addAction(UIAlertAction(title: "OK", style: .default, handler: { (aaction) in
+            print(ac.textFields?.first?.text ?? "no value")
+        }))
+        self.present(ac, animated: true, completion: nil)
     }
 
 }
